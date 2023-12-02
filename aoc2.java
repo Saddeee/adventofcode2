@@ -24,32 +24,31 @@ public class aoc2 {
                 String[] games = line.split(":");
                 String[] grops = games[1].split(";");
                 for (String string : grops) {
-                String[] grops2 = string.split(",");
-                for (String color : grops2) {
-                color = color.trim();
-                String[] num = color.split(" ");
-                // System.out.println(color);
-                if (color.contains("red") && Integer.parseInt(num[0]) > red) {
-                System.out.println(num[0] + " röd");
-                rad = false;
+                    String[] grops2 = string.split(",");
+                    for (String color : grops2) {
+                        color = color.trim();
+                        String[] num = color.split(" ");
+                        // System.out.println(color);
+                        if (color.contains("red") && Integer.parseInt(num[0]) > red) {
+                            System.out.println(num[0] + " röd");
+                            rad = false;
 
-                } else if (color.contains("blue") && Integer.parseInt(num[0]) > blue) {
-                System.out.println(num[0] + " blå");
-                blu = false;
+                        } else if (color.contains("blue") && Integer.parseInt(num[0]) > blue) {
+                            System.out.println(num[0] + " blå");
+                            blu = false;
 
-                } else if (color.contains("green") && Integer.parseInt(num[0]) > green) {
-                System.out.println(num[0] + " grön");
-                gren = false;
-                }
+                        } else if (color.contains("green") && Integer.parseInt(num[0]) > green) {
+                            System.out.println(num[0] + " grön");
+                            gren = false;
+                        }
 
-                }
+                    }
                 }
                 if (rad && blu && gren && blu) {
-                summa +=
-                Integer.parseInt(String.valueOf(games[0].charAt(games[0].length()-1)));
+                    summa += Integer.parseInt(String.valueOf(games[0].charAt(games[0].length() - 1)));
                 }
-                }
-                file.close();
+            }
+            file.close();
 
         } catch (IOException e) {
             System.out.println(e.getMessage());
